@@ -23,3 +23,4 @@ SELECT linea FROM dba.bitacora WHERE linea ILIKE '%update%';
 
 -- líneas que cumplen una expresión regular
 SELECT linea FROM dba.bitacora WHERE linea ~ '(FATAL|ERROR)';
+
