@@ -4,8 +4,6 @@
 
 `logging_collector` requiere reinicio porque modifica la forma en que PostgreSQL captura y almacena las bitácoras, lo que implica iniciar o detener procesos internos relacionados con el registro de eventos.
 
-Por otro lado, `log_statement` únicamente cambia qué sentencias SQL se registran en la bitácora, por lo que puede aplicarse mediante una recarga de configuración sin necesidad de reiniciar el servidor.
-
 ### 2. ¿Qué ventaja tiene que la bitácora se lea con SQL y no con una herramienta del sistema operativo o del contenedor? ¿Qué riesgo introduce?
 
 La principal ventaja es que permite consultar y analizar la bitácora desde PostgreSQL utilizando SQL, sin necesidad de acceder al sistema operativo o al contenedor. Además, facilita filtrar, buscar y ordenar información mediante consultas.
