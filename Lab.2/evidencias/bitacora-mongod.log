@@ -1,0 +1,8 @@
+{"t":{"$date":"2026-10-25T22:52:34.643Z"},"c":"NETWORK","ctx":"conn8","msg":"client metadata"}
+{"t":{"$date":"2026-10-25T22:52:34.661Z"},"c":"ACCESS","ctx":"conn9","msg":"Successfully authenticated","attr":{"user":"app_ventas","db":"comercial","client":"127.0.0.1:37234"}}
+{"t":{"$date":"2026-10-25T22:52:45.906Z"},"c":"COMMAND","ctx":"conn35","msg":"find","attr":{"ns":"comercial.clientes"}}
+{"t":{"$date":"2026-10-25T22:52:45.909Z"},"c":"COMMAND","ctx":"conn35","msg":"update","attr":{"ns":"comercial.clientes"}}
+{"t":{"$date":"2026-10-25T22:52:45.915Z"},"c":"COMMAND","ctx":"conn35","msg":"remove","attr":{"ns":"comercial.clientes"}}
+{"t":{"$date":"2026-10-25T22:52:56.999Z"},"c":"CONTROL","ctx":"conn31","msg":"Profiler settings changed"}
+{"t":{"$date":"2026-10-25T22:52:58.122Z"},"c":"ACCESS","ctx":"conn41","msg":"Failed to authenticate"}
+{"t":{"$date":"2026-10-25T22:52:58.453Z"},"c":"ACCESS","ctx":"conn43","msg":"Failed to authenticate"}
