@@ -1,1 +1,11 @@
-
+ id_evento |            momento            | usuario_sesion |   aplicacion   | operacion | id_cliente
+-----------+-------------------------------+----------------+----------------+-----------+------------
+         8 | 2026-10-25 22:55:14.112+00    | postgres       | psql           | UPDATE    |          1
+         7 | 2026-10-25 22:55:03.901+00    | postgres       | psql           | UPDATE    |          3
+         6 | 2026-10-25 22:54:58.010+00    | postgres       | psql           | UPDATE    |          5
+         5 | 2026-10-25 22:54:43.045+00    | postgres       | psql           | UPDATE    |          4
+         4 | 2026-10-25 22:54:12.873+00    | postgres       | psql           | UPDATE    |          2
+         3 | 2026-10-25 22:53:31.201+00    | postgres       | psql           | DELETE    |          6
+         2 | 2026-10-25 22:53:18.778+00    | postgres       | psql           | INSERT    |          6
+         1 | 2026-10-25 22:50:52.903+00    | app_ventas     | app-ventas-web | UPDATE    |          3
+(8 rows)
