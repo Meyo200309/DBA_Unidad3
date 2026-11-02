@@ -1,8 +1,25 @@
-{"t":{"$date":"2026-10-25T22:52:34.643Z"},"c":"NETWORK","ctx":"conn8","msg":"client metadata"}
-{"t":{"$date":"2026-10-25T22:52:34.661Z"},"c":"ACCESS","ctx":"conn9","msg":"Successfully authenticated","attr":{"user":"app_ventas","db":"comercial","client":"127.0.0.1:37234"}}
-{"t":{"$date":"2026-10-25T22:52:45.906Z"},"c":"COMMAND","ctx":"conn35","msg":"find","attr":{"ns":"comercial.clientes"}}
-{"t":{"$date":"2026-10-25T22:52:45.909Z"},"c":"COMMAND","ctx":"conn35","msg":"update","attr":{"ns":"comercial.clientes"}}
-{"t":{"$date":"2026-10-25T22:52:45.915Z"},"c":"COMMAND","ctx":"conn35","msg":"remove","attr":{"ns":"comercial.clientes"}}
-{"t":{"$date":"2026-10-25T22:52:56.999Z"},"c":"CONTROL","ctx":"conn31","msg":"Profiler settings changed"}
-{"t":{"$date":"2026-10-25T22:52:58.122Z"},"c":"ACCESS","ctx":"conn41","msg":"Failed to authenticate"}
-{"t":{"$date":"2026-10-25T22:52:58.453Z"},"c":"ACCESS","ctx":"conn43","msg":"Failed to authenticate"}
+{"t":{"$date":"2026-10-25T22:52:34.643+00:00"},"s":"I","c":"NETWORK","id":6788700,"ctx":"conn8","msg":"client metadata","attr":{"remote":"127.0.0.1:37222","client":"conn8","doc":{"application":{"name":"app-ventas-web"}}}}
+
+{"t":{"$date":"2026-10-25T22:52:34.643+00:00"},"s":"I","c":"ACCESS","id":20251,"ctx":"conn8","msg":"Connection not authenticating","attr":{"client":"127.0.0.1:37222"}}
+
+{"t":{"$date":"2026-10-25T22:52:34.661+00:00"},"s":"I","c":"ACCESS","id":20250,"ctx":"conn9","msg":"Successfully authenticated","attr":{"mechanism":"SCRAM-SHA-256","user":"app_ventas","db":"comercial","client":"127.0.0.1:37234","result":0}}
+
+{"t":{"$date":"2026-10-25T22:52:45.906+00:00"},"s":"I","c":"COMMAND","id":51803,"ctx":"conn35","msg":"Slow query","attr":{"type":"command","ns":"comercial.clientes","command":{"find":"clientes","filter":{"ciudad":"Culiacán"}},"docsExamined":5,"nreturned":3,"durationMillis":0}}
+
+{"t":{"$date":"2026-10-25T22:52:45.909+00:00"},"s":"I","c":"COMMAND","id":51803,"ctx":"conn35","msg":"update","attr":{"ns":"comercial.clientes","command":{"q":{"_id":3},"u":{"$set":{"rfc":"GAMA780912XYZ"}}},"nMatched":1,"nModified":1}}
+
+{"t":{"$date":"2026-10-25T22:52:45.915+00:00"},"s":"I","c":"COMMAND","id":51803,"ctx":"conn35","msg":"remove","attr":{"ns":"comercial.clientes","command":{"q":{"_id":2},"limit":1},"ndeleted":1}}
+
+{"t":{"$date":"2026-10-25T22:52:56.959+00:00"},"s":"I","c":"ACCESS","id":20250,"ctx":"conn31","msg":"Successfully authenticated","attr":{"mechanism":"SCRAM-SHA-256","user":"admin","db":"admin","client":"127.0.0.1:37200","result":0}}
+
+{"t":{"$date":"2026-10-25T22:52:56.999+00:00"},"s":"I","c":"CONTROL","id":23377,"ctx":"conn31","msg":"Profiler settings changed","attr":{"from":{"level":0,"slowms":100},"to":{"level":1,"filter":{"op":{"$in":["insert","remove","update"]}}},"db":"comercial"}}
+
+{"t":{"$date":"2026-10-25T22:52:57.394+00:00"},"s":"I","c":"COMMAND","id":51803,"ctx":"conn35","msg":"update","attr":{"ns":"comercial.clientes","command":{"q":{"_id":1},"u":{"$set":{"telefono":"6670000000"}}},"nModified":1}}
+
+{"t":{"$date":"2026-10-25T22:52:58.122+00:00"},"s":"I","c":"ACCESS","id":5286307,"ctx":"conn41","msg":"Failed to authenticate","attr":{"user":"app_ventas","client":"127.0.0.1:37276","error":"AuthenticationFailed: SCRAM authentication failed, storedKey mismatch","result":18,"doc":{"application":{"name":"mongosh 2.10.0"}}}}
+
+{"t":{"$date":"2026-10-25T22:52:58.453+00:00"},"s":"I","c":"ACCESS","id":5286307,"ctx":"conn43","msg":"Failed to authenticate","attr":{"user":"usuario_inexistente","client":"127.0.0.1:37296","error":"UserNotFound: Could not find user \"usuario_inexistente\" for db \"comercial\"","result":11,"doc":{"application":{"name":"mongosh 2.10.0"}}}}
+
+{"t":{"$date":"2026-10-25T22:53:12.105+00:00"},"s":"I","c":"ACCESS","id":20250,"ctx":"conn52","msg":"Successfully authenticated","attr":{"mechanism":"SCRAM-SHA-256","user":"admin","db":"admin","client":"127.0.0.1:37310","result":0}}
+
+{"t":{"$date":"2026-10-25T22:53:12.220+00:00"},"s":"I","c":"COMMAND","id":51803,"ctx":"conn52","msg":"grantRolesToUser executed","attr":{"user":"app_ventas","role":"dbAdmin","db":"comercial"}}
