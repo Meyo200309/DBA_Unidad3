@@ -1,0 +1,11 @@
+columna,tipo,longitud,acepta_nulos,descripcion
+id,bigint,,NO,"Identificador interno del cliente. Generado por el sistema."
+nombre,character varying,100,NO,"Nombre completo. Dato personal identificador directo."
+correo,character varying,150,NO,"Correo de contacto. Dato personal. Uso: notificaciones al cliente."
+telefono,character varying,20,SI,"Número telefónico de contacto del cliente. Dato personal. Uso: comunicación comercial y soporte."
+rfc,character varying,13,SI,"RFC del cliente. Dato personal. Uso: facturación. Cambios auditados en auditoria.cambios_clientes."
+edad,integer,,SI,"Edad en años cumplidos. Dato personal. Uso: analítica agregada."
+ciudad,character varying,100,SI,"Ciudad de residencia del cliente. Dato personal indirecto. Uso: segmentación geográfica y análisis comercial."
+codigo_postal,character varying,10,SI,"Código postal del domicilio del cliente. Uso: segmentación territorial y análisis regional."
+fecha_alta,date,,SI,"Fecha de incorporación del cliente al sistema. Uso: seguimiento comercial, auditoría y análisis histórico."
+segmento,character varying,20,SI,"Clasificación comercial del cliente según criterios de negocio. Uso: campañas, atención diferenciada y análisis de mercado."
