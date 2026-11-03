@@ -1,0 +1,102 @@
+E6 — EVIDENCIAS DE MONGODB
+
+1. PERFILADO DE OPERACIONES
+
+Archivo:
+system-profile.json
+
+Evidencia observada:
+
+- Usuario: app_ventas@comercial
+- Aplicación: app-ventas-web
+- Cliente: 127.0.0.1
+- Operación: query
+- Operación: update
+- Operación: remove
+- Colección: comercial.clientes
+
+Conclusión:
+El perfilador permitió identificar usuario, aplicación, origen y operación realizada, pero no conservó los valores anteriores de los documentos modificados.
+
+
+2. BITÁCORA DE MONGOD
+
+Archivo:
+bitacora-mongod.log
+
+Eventos observados:
+
+- Successfully authenticated
+- Failed to authenticate
+- Profiler settings changed
+- update
+- remove
+- client metadata
+
+Conclusión:
+La bitácora permitió identificar accesos exitosos, accesos fallidos y cambios de configuración del perfilador.
+
+
+3. CAMBIOS DE PRIVILEGIOS
+
+Evidencia disponible:
+
+- Instantáneas de privilegios almacenadas en auditoria.instantaneas_privilegios.
+- Comparación entre capturas consecutivas.
+
+Resultado observado:
+
+Usuario:
+app_ventas
+
+Privilegios anteriores:
+- readWrite
+
+Privilegios posteriores:
+- readWrite
+- dbAdmin
+
+Limitación:
+
+No fue posible identificar directamente:
+- quién realizó el cambio
+- la hora exacta del cambio
+
+Se confirmó únicamente que el cambio ocurrió entre dos instantáneas.
+
+
+4. COMPARACIÓN DE CAPACIDADES
+
+PostgreSQL:
+- Auditoría de cambios de datos.
+- Bitácora de accesos.
+- Registro de privilegios y DDL.
+- Conservación de valores anteriores mediante triggers.
+
+MongoDB Community:
+- Perfilado de operaciones.
+- Bitácora de autenticación.
+- Sin auditoría nativa de privilegios.
+- Sin conservación automática de valores anteriores.
+
+MongoDB Enterprise / Atlas:
+- Auditoría nativa documentada.
+- Registro de eventos de seguridad.
+- Registro de cambios administrativos.
+- Registro de privilegios.
+
+
+5. ARCHIVOS ENTREGADOS
+
+✓ system-profile.json
+
+✓ bitacora-mongod.log
+
+✓ hashes.sha256
+
+✓ comandos-mongosh.js
+
+
+6. OBSERVACIÓN
+
+Los cambios de privilegios constituyen la principal limitación observada en MongoDB Community. Para mitigarla se utilizó un control compensatorio basado en instantáneas de roles y usuarios.
