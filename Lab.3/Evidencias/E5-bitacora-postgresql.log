@@ -1,1 +1,42 @@
 
+2026-10-25 22:50:09.341 UTC [168] user=postgres db=comercial app=psql client=[local] LOG:  statement: REVOKE UPDATE ON clientes FROM soporte_ana
+
+2026-10-25 22:50:09.367 UTC [168] user=postgres db=comercial app=psql client=[local] LOG:  statement: GRANT UPDATE ON clientes TO app_ventas
+
+2026-10-25 22:50:09.372 UTC [168] user=postgres db=comercial app=psql client=[local] LOG:  statement: ALTER TABLE clientes ADD COLUMN segmento VARCHAR(20)
+
+2026-10-25 22:50:09.375 UTC [168] user=postgres db=comercial app=psql client=[local] LOG:  statement: CREATE ROLE rol_temporal LOGIN PASSWORD '<REDACTED>'
+
+2026-10-25 22:50:20.101 UTC [162] user=app_ventas db=comercial app=app-ventas-web client=127.0.0.1 LOG:  statement: UPDATE clientes SET telefono = '6670000000' WHERE id = 1
+
+2026-10-25 22:50:34.643 UTC [189] user=app_ventas db=comercial app=app-ventas-web client=127.0.0.1 LOG:  connection authorized: user=app_ventas database=comercial
+
+2026-10-25 22:50:52.903 UTC [190] user=app_ventas db=comercial app=app-ventas-web client=127.0.0.1 LOG:  statement: UPDATE clientes SET rfc = 'GAMA780912ZZZ' WHERE id = 3
+
+2026-10-25 22:50:53.460 UTC [253] user=app_ventas db=comercial app=app-ventas-web client=127.0.0.1 LOG:  statement: ALTER TABLE clientes DISABLE TRIGGER trg_auditoria_clientes
+
+2026-10-25 22:50:53.549 UTC [260] user=postgres db=comercial app=psql client=[local] LOG:  statement: ALTER TABLE clientes DISABLE TRIGGER trg_auditoria_clientes
+
+2026-10-25 22:50:53.554 UTC [260] user=postgres db=comercial app=psql client=[local] LOG:  statement: UPDATE clientes SET rfc = 'GAMA780912GHI' WHERE id = 3
+
+2026-10-25 22:50:53.560 UTC [260] user=postgres db=comercial app=psql client=[local] LOG:  statement: ALTER TABLE clientes ENABLE TRIGGER trg_auditoria_clientes
+
+2026-10-25 22:51:15.762 UTC [168] user=soporte_ana db=comercial app=psql client=127.0.0.1 ERROR:  permission denied for table clientes
+
+2026-10-25 22:51:15.762 UTC [168] user=soporte_ana db=comercial app=psql client=127.0.0.1 STATEMENT: DELETE FROM clientes WHERE id = 5
+
+2026-10-25 22:51:44.876 UTC [175] user=postgres db=comercial app=psql client=[local] ERROR:  role "soporte_ana" cannot be dropped because some objects depend on it
+
+2026-10-25 22:51:44.876 UTC [175] user=postgres db=comercial app=psql client=[local] DETAIL: privileges for table clientes
+
+2026-10-25 22:51:44.876 UTC [175] user=postgres db=comercial app=psql client=[local] STATEMENT: DROP ROLE soporte_ana
+
+2026-10-25 22:54:26.533 UTC [301] user=postgres db=comercial app=psql client=[local] LOG:  statement: CREATE SCHEMA gobierno
+
+2026-10-25 22:54:26.541 UTC [301] user=postgres db=comercial app=psql client=[local] LOG:  statement: CREATE TABLE gobierno.solicitudes_cambio
+
+2026-10-25 22:54:26.556 UTC [301] user=postgres db=comercial app=psql client=[local] LOG:  statement: INSERT INTO gobierno.solicitudes_cambio VALUES ('CAM-2026-014','Agregar columna canal_alta a clientes','Gerencia Comercial','Comité de cambios','produccion',now() - interval '1 day',now() - interval '5 minutes',now() + interval '1 hour')
+
+2026-10-25 22:54:26.572 UTC [301] user=postgres db=comercial app=psql client=[local] LOG:  statement: ALTER TABLE clientes ADD COLUMN canal_alta VARCHAR(20)
+
+2026-10-25 22:54:26.578 UTC [301] user=postgres db=comercial app=psql client=[local] LOG:  statement: COMMENT ON COLUMN clientes.canal_alta IS 'Canal por el que se registró el cliente. Cambio CAM-2026-014.'
